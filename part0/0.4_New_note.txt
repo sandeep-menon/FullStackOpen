@@ -1,0 +1,35 @@
+# websequencediagram for 0.4_New_note.png
+title 0.4 New note
+
+note over Client:
+User enters text in INPUT
+element and clicks on 
+Save BUTTON
+end note
+Client->Server: exampleapp/new_note is hit with POST HTTP request
+note right of Server: Server takes the data\nfrom request's body and writes it\nto database.
+Server-->Client: HTTP Response 302 (redirect to exampleapp/notes)
+Client->Server: GET HTTP exampleapp/notes
+Server-->Client: HTML code is served
+note left of Client:
+HTML code links to main.css
+end note
+Client->Server: GET HTTP exampleapp/main.css 
+Server-->Client: main.css
+note left of Client:
+HTML code links to main.js
+end note
+Client->Server: GET HTTP exampleapp/main.js
+Server-->Client: main.js
+note left of Client:
+Client starts executing JS
+code which requests for data.json
+from server using XMLHttpRequest()
+end note
+Client->Server: GET HTTP exampleapp/data.json
+Server-->Client: data.json [{},{}...]
+note left of Client:
+Client executes event handler
+to render each item present in
+data.json as a LI
+end note

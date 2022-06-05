@@ -1,0 +1,27 @@
+# websequencediagram for 0.5_Single_page_app.png
+title 0.5 Single page app
+
+note left of Client:User enters the address\nin their browser for\nsingle page application
+Client->Server: HTTP GET exampleapp/spa
+Server-->Client: HTML code is served
+note over Client: 
+HTML code links to main.css
+end note
+Client->Server: HTTP GET exampleapp/main.css
+Server-->Client: main.css is served
+note over Client:
+HTML code links to spa.js
+end note
+Client->Server: HTTP GET exampleapp/spa.js
+Server-->Client: spa.js is served
+note over Client:
+Client executes spa.js
+which requests for data.json
+from the Server
+end note
+Client->Server: HTTP GET exampleapp/data.json
+Server-->Client: data.json is served
+note over Client:
+Event handler in spa.js
+renders each element in data.json
+end note

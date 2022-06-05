@@ -1,0 +1,21 @@
+# websequencediagram for 0.6_New_note.png
+title 0.6 New note
+
+note over Client:
+User enters data in INPUT
+and clicks on Save button
+end note
+note over Client:
+Code in spa.js executes
+to redraw notes
+end note
+Client->Server: HTTP POST exampleapp/new_note_spa
+note over Server:
+Server fetches the data
+from request body and
+writes it to database
+end note
+Server-->Client: HTTP 201 [{"message": "note created"}]
+note over Client:
+Console.log response from Server
+end note
